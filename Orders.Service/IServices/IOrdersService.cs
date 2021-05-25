@@ -8,8 +8,10 @@ namespace Orders.Service.IServices
 {
 	public interface IOrdersService
 	{
-		public (bool, int) AddOrders(OrdersRequestModel ordersRequestModel, string? IPAddress);
+		public GenericResponseModel AddOrders(OrdersRequestModel ordersRequestModel, string IPAddress);
 
-		public (bool, FileResponseModel) GetReciptByID(int id);
+		public GenericResponseModel GetReciptByID(Guid id);
+
+		public GenericResponseModel UpdateOrder(Guid id, CustomerUpdateRequestModel updateRequestModel);
 	}
 }

@@ -48,9 +48,9 @@ namespace OrdersAPI.Extensions
 			return _modelValidated;
 		}
 
-		public static Order toEntity(this OrdersRequestModel requestModel, string IPAddress)
+		public static CSReceipt toEntity(this OrdersRequestModel requestModel, string IPAddress)
 		{
-			Order order = new Order
+			CSReceipt order = new CSReceipt
 			{
 				Address = requestModel.Address,
 				IpAddress = IPAddress,
@@ -60,14 +60,25 @@ namespace OrdersAPI.Extensions
 				CompanyName = requestModel.CompanyName,
 				CreatedDate = DateTime.Now,
 				Discount = requestModel.OverallDiscount,
-				Tax = requestModel.Tax
+				Tax = requestModel.Tax,
+				URL = requestModel.URL,
+				AID = requestModel.AID,
+				MID = requestModel.MID,
+				Type_Of_Sale = requestModel.Type_Of_Sale,
+				PaymentMethod = requestModel.PaymentMethod,
+				Auth_ID = requestModel.Auth_ID,
+				Transaction = requestModel.Transaction,
+				PaymentCard = requestModel.CardName,
+				Order = requestModel.Order,
+				Payment = requestModel.Payment,
+				Reference = requestModel.Reference
 			};
 			return order;
 		}
-		public static OrderItem toEntity(this OrdersDetailRequestModel ItemModel, string IPAddress, int OrderID)
+		public static CSReceiptItem toEntity(this OrdersDetailRequestModel ItemModel, string IPAddress, Guid OrderID)
 		{
 
-			OrderItem orderItem = new OrderItem
+			CSReceiptItem orderItem = new CSReceiptItem
 			{
 				OrderID = OrderID,
 				Quantity = ItemModel.Quantity,

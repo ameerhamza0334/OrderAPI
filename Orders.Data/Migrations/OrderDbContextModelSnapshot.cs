@@ -19,17 +19,22 @@ namespace Orders.Data.Migrations
                 .HasAnnotation("ProductVersion", "5.0.5")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-            modelBuilder.Entity("Orders.Data.Models.Order", b =>
+            modelBuilder.Entity("Orders.Data.Models.CSReceipt", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("AID")
+                        .HasColumnType("text");
 
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Auth_ID")
+                        .HasColumnType("text");
 
                     b.Property<string>("CompanyName")
                         .IsRequired()
@@ -39,6 +44,12 @@ namespace Orders.Data.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<string>("CustomerEmail")
+                        .HasColumnType("text");
+
+                    b.Property<string>("CustomerPhone")
+                        .HasColumnType("text");
+
                     b.Property<decimal>("Discount")
                         .HasColumnType("numeric");
 
@@ -46,13 +57,28 @@ namespace Orders.Data.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
 
+                    b.Property<string>("MID")
+                        .HasColumnType("text");
+
                     b.Property<string>("MerchantID")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
 
+                    b.Property<string>("Order")
+                        .HasColumnType("text");
+
                     b.Property<int>("OrderNo")
                         .HasMaxLength(20)
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Payment")
+                        .HasColumnType("text");
+
+                    b.Property<string>("PaymentCard")
+                        .HasColumnType("text");
+
+                    b.Property<int>("PaymentMethod")
                         .HasColumnType("integer");
 
                     b.Property<string>("PhoneNumber")
@@ -60,26 +86,37 @@ namespace Orders.Data.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
 
+                    b.Property<string>("Reference")
+                        .HasColumnType("text");
+
                     b.Property<decimal>("Tax")
                         .HasColumnType("numeric");
+
+                    b.Property<string>("Transaction")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Type_Of_Sale")
+                        .HasColumnType("text");
+
+                    b.Property<string>("URL")
+                        .HasColumnType("text");
 
                     b.HasKey("ID");
 
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("Orders.Data.Models.OrderItem", b =>
+            modelBuilder.Entity("Orders.Data.Models.CSReceiptItem", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<int>("OrderID")
-                        .HasColumnType("integer");
+                    b.Property<Guid>("OrderID")
+                        .HasColumnType("uuid");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
@@ -94,9 +131,9 @@ namespace Orders.Data.Migrations
                     b.ToTable("OrderItems");
                 });
 
-            modelBuilder.Entity("Orders.Data.Models.OrderItem", b =>
+            modelBuilder.Entity("Orders.Data.Models.CSReceiptItem", b =>
                 {
-                    b.HasOne("Orders.Data.Models.Order", "Orders")
+                    b.HasOne("Orders.Data.Models.CSReceipt", "Orders")
                         .WithMany()
                         .HasForeignKey("OrderID")
                         .OnDelete(DeleteBehavior.Cascade)

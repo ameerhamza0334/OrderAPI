@@ -4,9 +4,9 @@ using Orders.Data.Models;
 
 namespace Orders.Data.Configurations
 {
-	public class OrderConfig : IEntityTypeConfiguration<Order>
+	public class OrderConfig : IEntityTypeConfiguration<CSReceipt>
 	{
-		public void Configure(EntityTypeBuilder<Order> builder)
+		public void Configure(EntityTypeBuilder<CSReceipt> builder)
 		{
 			builder.HasKey(x => x.ID);
 			builder

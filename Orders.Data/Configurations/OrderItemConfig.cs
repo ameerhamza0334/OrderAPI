@@ -7,9 +7,9 @@ using System.Text;
 
 namespace Orders.Data.Configurations
 {
-	public class OrderItemConfig : IEntityTypeConfiguration<OrderItem>
+	public class OrderItemConfig : IEntityTypeConfiguration<CSReceiptItem>
 	{
-		public void Configure(EntityTypeBuilder<OrderItem> builder)
+		public void Configure(EntityTypeBuilder<CSReceiptItem> builder)
 		{
 			builder.HasKey(x => x.ID);
 			builder.Property(x => x.Price).IsRequired();

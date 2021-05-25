@@ -27,13 +27,13 @@ namespace Orders.Data
 			}
 		}
 
-		public DbSet<Order> Orders { get; set; }
-		public DbSet<OrderItem> OrderItems { get; set; }
+		public DbSet<CSReceipt> Orders { get; set; }
+		public DbSet<CSReceiptItem> OrderItems { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
-			new OrderConfig().Configure(modelBuilder.Entity<Order>());
+			new OrderConfig().Configure(modelBuilder.Entity<CSReceipt>());
 		}
 	}
 }
