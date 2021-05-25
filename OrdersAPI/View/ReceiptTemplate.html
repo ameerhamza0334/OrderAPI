@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="ReceiptTemplate.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./ReceiptTemplate.js"></script>
+</head>
+
+<body>
+    <div id="Receipt" class="b7">
+        <strong>
+            <h3 id="companyName">
+                Simply Eggless
+            </h3>
+        </strong>
+        <p id="address_1">
+            11700 183RD ST
+        </p>
+        <p id="address_2">Artesia, CA 90701</p>
+
+        <p id="phoneNumber">
+            0900786010
+        </p>
+        <p id="url">
+            https://www.google.com
+        </p>
+        <p class="first_column" id="createdDate">2019-08-30T15:14:33+02:00</p>
+        <div class="first_column">
+            Transaction
+            <strong>
+                <span id="Transaction">123456</span>
+            </strong>
+        </div>
+        <table class="tbl_main">
+            
+            <tfoot>
+                <tr style="line-height: 27px;">
+                    <td class="first_column"><strong>Total</strong> </td>
+                    <td></td>
+                    <td><strong id="total">$13.14</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="first_column" id="sale_card">Card Sale Discover 1461</td>
+                    <td id="total_payment">$13.14</td>
+                </tr>
+            </tfoot>
+        </table>
+        <p>Retain the copy for statement validation</p>
+        <br>
+        <p class="first_column" id="createdDate_actual">2019-08-30T15:14:33+02:00</p>
+        <p class="first_column"><span id="Total_bill">$15.96</span> | Method: <span id="type_Of_Sale">CONTACTLESS</span>
+        </p>
+        <p class="first_column" id="CardName">Discover XXXXXXXXXXXX1461</p>
+        <p class="first_column">Reference ID: <span id="Reference">000000000000</span> | Auth ID: </p>
+        <p class="first_column" id="auth_ID">00477R</p>
+        <p class="first_column">MID: <span id="mid">********3886</span> </p>
+        <p class="first_column">AID: <span id="aid">A00000000001523010</span></p>
+        <p class="first_column">AthNtwkNm: <span id="auth_network_name">DISCOVER</span> </p>
+        <br>
+        <p class="first_column">Order <span id="order">qwertyuioplkjh092</span> </p>
+        <p class="first_column">Payment <span id="payment">qwertyuioplkjh092</span></p>
+        <br>
+        <p>Clover Privacy Policy</p>
+        <p>https://clover.com/privacy</p>
+        <hr>
+        <div class=" lh-20">
+            <input id="txt_email" type="email" placeholder="Email" class="w-90 h-4">
+            <br>
+            <input id="txt_number" type="number" placeholder="Phone Number" class="w-90 h-4 mt-2">
+            <button class="form_btn" id="btn_submit">Submit</button>
+        </div>
+    </div>
+</body>
+
+</html>

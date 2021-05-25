@@ -1,0 +1,7 @@
+#mod_rewrite starts here 
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+RewriteRule ^(.*)$ ReceiptTemplate.html?params=$1 [NC, QSA]

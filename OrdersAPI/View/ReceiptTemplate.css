@@ -1,0 +1,51 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.first_column {
+    text-align: left;
+}
+
+.b7 {
+    width: 332.5984252px;
+    height: 472.44094488px;
+    margin: 0 auto;
+    line-height: 6px;
+}
+
+.no-col {
+    width: 1vw;
+}
+
+.mt-2 {
+    margin-top: 1.5vh;
+}
+.h-4 {
+    height: 4vh !important;
+}
+
+.tbl_main {
+    justify-content: center;
+    width: 100%;
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+.form_input {
+    float: right;
+}
+
+.form_btn {
+    width: 25%;
+    height: 3vh;
+    margin-top: 2%;
+}
+
+.lh-20 {
+    line-height: 20px;
+}
+
+.w-90 {
+    width: 90%;
+}
