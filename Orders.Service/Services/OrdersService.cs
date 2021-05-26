@@ -19,7 +19,7 @@ namespace Orders.Service.Services
 		private string BaseURL = "http://127.0.0.1:5500/ReceiptTemplate.html?id=";
 #else
 				
-		private string BaseURL = "https://coorder.azurewebsites.net/v1/api/order";
+		private string BaseURL = "http://coorder.surge.sh/ReceiptTemplate.html?id=";
 #endif
 
 		private OrderDbContext _dbContext = new OrderDbContext();

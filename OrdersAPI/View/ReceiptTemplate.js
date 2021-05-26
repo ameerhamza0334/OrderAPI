@@ -19,8 +19,6 @@ function updateSuccessCallback(response) {
 }
 
 function getReceiptDetailsCallback(response) {
-    debugger;
-    console.log(response);
     let address_arr = response.data["address"].split(',');
     let cardData = response.data['cardName'];
     let cardData_arr = [];
@@ -67,7 +65,7 @@ function updateCustomerDetails() {
 
         let orderID = getOrderID();
         var settings = {
-            "url": `https://localhost:5001/v1/api/order/${orderID}`,
+            "url": `https://coorder.azurewebsites.net/v1/api/order/${orderID}`,
             "method": "PUT",
             "timeout": 0,
             "headers": {
@@ -86,10 +84,10 @@ function updateCustomerDetails() {
 }
 
 function getReceiptDetails() {
-    debugger;
+    
     let orderID = getOrderID();
     var settings = {
-        "url": `https://localhost:5001/v1/api/order/${orderID}`,
+        "url": `https://coorder.azurewebsites.net/v1/api/order/${orderID}`,
         "method": "GET",
         "timeout": 0,
         "headers": {

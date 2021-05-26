@@ -13,7 +13,7 @@ namespace Orders.Data
 
 		public OrderDbContext(DbContextOptions<OrderDbContext> options) : base(options)
 		{
-		
+
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -34,6 +34,7 @@ namespace Orders.Data
 		{
 			base.OnModelCreating(modelBuilder);
 			new OrderConfig().Configure(modelBuilder.Entity<CSReceipt>());
+			new OrderItemConfig().Configure(modelBuilder.Entity<CSReceiptItem>());
 		}
 	}
 }
